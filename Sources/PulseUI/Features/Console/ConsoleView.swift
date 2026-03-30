@@ -2,7 +2,6 @@
 //
 // Copyright (c) 2020-2024 Alexander Grebenyuk (github.com/kean).
 
-#if !os(macOS)
 
 import SwiftUI
 import CoreData
@@ -26,5 +25,3 @@ extension ConsoleView {
         self.init(environment: .init(store: store, mode: mode))
     }
 }
-
-#endif
