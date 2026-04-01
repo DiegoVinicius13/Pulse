@@ -4,11 +4,11 @@
 
 import CoreData
 
-package final class PulseDocument {
+public final class PulseDocument {
     package let container: NSPersistentContainer
-    package var context: NSManagedObjectContext { container.viewContext }
+    public var context: NSManagedObjectContext { container.viewContext }
 
-    package init(documentURL: URL) throws {
+    public init(documentURL: URL) throws {
         guard Files.fileExists(atPath: documentURL.deletingLastPathComponent().path) else {
             throw LoggerStore.Error.fileDoesntExist
         }
@@ -40,7 +40,7 @@ package final class PulseDocument {
     }()
 }
 
-package final class PulseBlobEntity: NSManagedObject {
-    @NSManaged package var key: String
-    @NSManaged package var data: Data
+public final class PulseBlobEntity: NSManagedObject {
+    @NSManaged public var key: String
+    @NSManaged public var data: Data
 }
